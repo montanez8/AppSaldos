@@ -1,4 +1,3 @@
-
 package Appsaldos.dominio;
 
 public class cliente {
@@ -9,6 +8,9 @@ public class cliente {
     private  String telefono;
     private double saldo;
 
+    public cliente(int id_cliente) {
+        this.id_cliente = id_cliente;
+    }
     public cliente(int id_cliente, String nombres, String apellidos, String email, String telefono, double saldo) {
         this.id_cliente = id_cliente;
         this.nombres = nombres;
@@ -25,15 +27,6 @@ public class cliente {
         this.saldo = saldo;
     }
 
-
-
-    public cliente(double saldo) {
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.email = email;
-        this.telefono = telefono;
-        this.saldo = saldo;
-    }
 
     public int getId_cliente() {
         return id_cliente;
@@ -82,6 +75,6 @@ public class cliente {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
-    
-    
+
+
 }

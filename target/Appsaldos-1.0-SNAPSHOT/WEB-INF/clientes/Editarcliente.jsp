@@ -1,4 +1,5 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html >
 <head>
   <meta charset="UTF-8">
@@ -21,7 +22,6 @@
   <!--botones de navegacion-->
   <jsp:include page="/WEB-INF/paginas/comunes/botonesNavegacionEdicion.jsp"></jsp:include>
     <!--fin botones de navegacion-->
-
   <section id="details">
     <div class="container">
       <div class="row">
@@ -32,7 +32,7 @@
             </div>
             <div class="card-body">
               <div class="form-group">
-                <%--@declare id="nombres"--%><label for="nombres">nombres</label>
+                <label for="nombres">nombres</label>
                 <input type="text" class="form-control" name="nombres" required value="${cliente.nombres}">
               </div>
               <div class="form-group>

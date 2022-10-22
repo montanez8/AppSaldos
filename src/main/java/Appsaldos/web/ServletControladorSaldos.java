@@ -62,6 +62,7 @@ public class ServletControladorSaldos extends HttpServlet {
         }
     }
 
+    //section dotget
     @Override
         protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -71,7 +72,7 @@ public class ServletControladorSaldos extends HttpServlet {
                 case "editar":
                     this.editarcliente(request, response);
                     break;
-                    case "eliminar":
+                case "eliminar":
                     this.eliminarcliente(request, response);
                     break;
                 default:
@@ -80,30 +81,28 @@ public class ServletControladorSaldos extends HttpServlet {
         } else {
             this.accionDefault(request, response);
         }
-
-        this.accionDefault(request, response);
-        List<cliente>clientes = new clienteDaoJDBc().getAll();
+       /* List<cliente>clientes = new clienteDaoJDBc().getAll();
         request.setAttribute("clientes" , clientes);
         request.setAttribute("totalClientes", clientes.size());
         request.setAttribute("saldoTotal", this.calcularSaldoTotal(clientes));
-        request.getRequestDispatcher("cliente.jsp").forward(request, response);
+        request.getRequestDispatcher("cliente.jsp").forward(request, response);*/
     }
 
 
     private void accionDefault(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
         List<cliente>clientes = new clienteDaoJDBc().getAll();
-        //HttpSession sesion = request.getSession();
+        HttpSession sesion = request.getSession();
         System.out.println("clientes = " + clientes);
-       /* sesion.setAttribute("clientes", clientes);
+        sesion.setAttribute("clientes", clientes);
         sesion.setAttribute("totalClientes", clientes.size());
         sesion.setAttribute("saldoTotal", this.calcularSaldoTotal(clientes));
-        response.sendRedirect("cliente.jsp");*/
+        response.sendRedirect("cliente.jsp");
 
-        request.setAttribute("clientes" , clientes);
+      /*  request.setAttribute("clientes" , clientes);
         request.setAttribute("totalClientes", clientes.size());
         request.setAttribute("saldoTotal", this.calcularSaldoTotal(clientes));
-        request.getRequestDispatcher("cliente.jsp").forward(request, response);
+        request.getRequestDispatcher("cliente.jsp").forward(request, response);*/
     }
 
         private double calcularSaldoTotal(List<cliente>clientes){
