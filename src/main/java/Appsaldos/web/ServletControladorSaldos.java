@@ -65,8 +65,8 @@ public class ServletControladorSaldos extends HttpServlet {
     @Override
         protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //String accion = request.getParameter("accion");
-        /*if (accion != null) {
+        String accion = request.getParameter("accion");
+        if (accion != null) {
             switch (accion) {
                 case "editar":
                     this.editarcliente(request, response);
@@ -76,15 +76,14 @@ public class ServletControladorSaldos extends HttpServlet {
             }
         } else {
             this.accionDefault(request, response);
-        }*/
+        }
 
-        this.accionDefault(request, response);
-
+        /*this.accionDefault(request, response);
         List<cliente>clientes = new clienteDaoJDBc().getAll();
         request.setAttribute("clientes" , clientes);
         request.setAttribute("totalClientes", clientes.size());
         request.setAttribute("saldoTotal", this.calcularSaldoTotal(clientes));
-        request.getRequestDispatcher("cliente.jsp").forward(request, response);
+        request.getRequestDispatcher("cliente.jsp").forward(request, response);*/
     }
 
 
@@ -151,7 +150,7 @@ public class ServletControladorSaldos extends HttpServlet {
         int id_cliente = Integer.parseInt(request.getParameter("id_cliente"));
         cliente cliente = new clienteDaoJDBc().encontrar(new cliente(id_cliente));
         request.setAttribute("cliente", cliente);
-        String jspEditar = "/WEB-INF/paginas/cliente/editarcliente.jsp";
+        String jspEditar = "/WEB-INF/clientes/editarcliente.jsp";
         request.getRequestDispatcher(jspEditar).forward(request, response);
     }
 

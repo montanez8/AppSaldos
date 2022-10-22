@@ -8,17 +8,12 @@
         </a>
       </div>
       <div class="col-md-3">
-        <a href="#" class="btn btn-success btn-block">
-          <i class="fas fa-thumbs-up"></i> Like
-        </a>
-      </div>
-      <div class="col-md-3">
         <button type="submit" class="btn btn-success btn-block">
           <i class="fa fa-check"></i>Guardar cliente
         </button>
       </div>
       <div class="col-md-3">
-        <a href="${pageContext.request.contextPath}/ServletControladorSaldos?accion=eliminar&id_cliente=${cliente.idcliente}"
+        <a href="${pageContext.request.contextPath}/ServletControladorSaldos?accion=eliminar&id_cliente=${cliente.id_cliente}"
            class="btn btn-danger btn-block">
           <i class="fas fa-trash"></i> Eliminar cliente
         </a>

@@ -21,17 +21,17 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <c:forEach var="cliente" items="${clientes}" >
+                        <c:forEach var="cliente" items="${clientes}" varStatus="status" >
                             <tr>
-                                <td>${cliente.id_cliente}</td>
+                                <td>${status.count}</td>
                                 <td>${cliente.nombres}  ${cliente.apellidos}</td>
                                 <td> <fmt:formatNumber value="${cliente.saldo}" type="currency"/></td>
-                               <%-- <td>
-                                   &lt;%&ndash; <a href="${pageContext.request.contextPath}/ServletControladorSaldos?accion=editar&idcliente=${cliente.id_cliente}"
+                                <td>
+                                    <a href="${pageContext.request.contextPath}/ServletControladorSaldos?accion=editar&id_cliente=${cliente.id_cliente}"
                                        class="btn btn-secondary">
                                         <i class="fas fa-angle-double-right"></i>Editar
-                                    </a>&ndash;%&gt;
-                                </td>--%>
+                                    </a>
+                                </td>
                             </tr>
                         </c:forEach>
                         </tbody>

@@ -10,7 +10,7 @@ import java.util.List;
 public class clienteDaoJDBc {
 
     private static final String SQL_SELECT = "select id_cliente, nombres, apellidos, email, telefono, saldo from db_saldos.cliente";
-    private static final String SQL_SELECT_BY_ID = "select id_cliente, nombres, apellidos, email, telefono, saldo from db_saldos.cliente where id_cliente=?";
+    private static final String SQL_SELECT_BY_ID = "select id_cliente,   nombres, apellidos, email, telefono, saldo from db_saldos.cliente where id_cliente=?";
     private static final String SQL_INSERT = "insert into db_saldos.cliente( nombres, apellidos, email, telefono, saldo) values (?,?,?,?,?)";
     private static final String SQL_UPDATE = "update db_saldos.cliente set nombres=?,apellidos=?,email=?,telefono=?,saldo=? where id_cliente=?";
     private static final String SQL_DELETE = "DELETE FROM db_saldos.cliente WHERE id_cliente=?";
